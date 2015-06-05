@@ -43,12 +43,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnetcmdiface
 
-# PowerHAL
+# HAL
 PRODUCT_PACKAGES += \
     hwcomposer.front \
     gralloc.omap4.so \
     libedid \
-    libstagefrighthw
+    libstagefrighthw \
+    lights.omap4
 
 # OMAP4
 PRODUCT_PACKAGES += \
