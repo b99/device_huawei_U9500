@@ -1,6 +1,6 @@
 
 # LCD DENSITY
-ro.sf.lcd_density=290
+ro.sf.lcd_density=320
 
 # RIL
 audioril.lib=libhuawei-audio-ril.so
@@ -28,7 +28,6 @@ ro.ril.disable.power.collapse=1
 ro.telephony.call_ring.multiple=0
 
 # MASS STORAGE
-ro.config.hw_allow_ums_and_mtp=true
 ro.vold.umsdirtyratio=50
 ro.config.internal_sdcard=yes
 

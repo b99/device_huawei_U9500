@@ -1,2 +1,1 @@
-This port for Huawei U9500 Ascend D1 is made of device tree faust93 - https://github.com/faust93
-We thank him!!!
+Huawei U9500 Ascend D1 device tree for Cyanogemod 10.1.

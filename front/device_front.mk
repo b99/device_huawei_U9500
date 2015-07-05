@@ -39,57 +39,44 @@ PRODUCT_COPY_FILES += \
 
 # Media / Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio/es305img.bin:system/etc/es305img.bin \
-    $(LOCAL_PATH)/audio/huawei/audio/cm_front_audio_config.conf:system/etc/huawei/audio/cm_front_audio_config.conf \
-    $(LOCAL_PATH)/audio/huawei/audio/cm_front_audio_config.conf:system/etc/huawei/audio/pac_front_audio_config.conf \
-    $(LOCAL_PATH)/audio/huawei/audio/front_audio_config.conf:system/etc/huawei/audio/front_audio_config.conf \
-    $(LOCAL_PATH)/audio/huawei/audio/front_factory_audio_config.conf:system/etc/huawei/audio/front_factory_audio_config.conf
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio/cm_front_audio_config.conf:system/etc/huawei/audio/cm_front_audio_config.conf \
+    $(LOCAL_PATH)/configs/audio/cm_front_audio_config.conf:system/etc/huawei/audio/pac_front_audio_config.conf \
+    $(LOCAL_PATH)/configs/audio/front_audio_config.conf:system/etc/huawei/audio/front_audio_config.conf \
+    $(LOCAL_PATH)/configs/audio/front_factory_audio_config.conf:system/etc/huawei/audio/front_factory_audio_config.conf
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gpsconfig.xml
-
-# BT
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/BCM4330B1.hcd:system/etc/bluetooth/BCM4330B1.hcd \
-    $(LOCAL_PATH)/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-    $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
-    $(LOCAL_PATH)/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
-    $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-    $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
-    $(LOCAL_PATH)/bluetooth/init.bcm.chip_off.sh:system/etc/bluetooth/init.bcm.chip_off.sh \
-    $(LOCAL_PATH)/bluetooth/init.bcm.chip_on.sh:system/etc/bluetooth/init.bcm.chip_on.sh \
-    $(LOCAL_PATH)/bluetooth/input.conf:system/etc/bluetooth/input.conf \
-    $(LOCAL_PATH)/bluetooth/main.conf:system/etc/bluetooth/main.conf \
-    $(LOCAL_PATH)/bluetooth/network.conf:system/etc/bluetooth/network.conf \
-    $(LOCAL_PATH)/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gpsconfig.xml:system/etc/gpsconfig.xml
 
 # Vold
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
+    $(LOCAL_PATH)/ramdisk/vold.fstab:system/etc/vold.fstab
 
 # Key maps
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/omap4-keypad.kl:system/usr/keylayout/omap4-keypad.kl \
-    $(LOCAL_PATH)/usr/omap4-keypad.kcm:system/usr/keychars/omap4-keypad.kcm \
-    $(LOCAL_PATH)/usr/twl6030_pwrbutton.kl:system/usr/keylayout/twl6030_pwrbutton.kl
+    $(LOCAL_PATH)/configs/usr/omap4-keypad.kl:system/usr/keylayout/omap4-keypad.kl \
+    $(LOCAL_PATH)/configs/usr/omap4-keypad.kcm:system/usr/keychars/omap4-keypad.kcm \
+    $(LOCAL_PATH)/configs/usr/twl6030_pwrbutton.kl:system/usr/keylayout/twl6030_pwrbutton.kl
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/syn_tm12xx_ts_1.idc:system/usr/idc/syn_tm12xx_ts_1.idc \
-    $(LOCAL_PATH)/usr/syn_tm12xx_ts_2.idc:system/usr/idc/syn_tm12xx_ts_2.idc
+    $(LOCAL_PATH)/configs/usr/syn_tm12xx_ts_1.idc:system/usr/idc/syn_tm12xx_ts_1.idc \
+    $(LOCAL_PATH)/configs/usr/syn_tm12xx_ts_2.idc:system/usr/idc/syn_tm12xx_ts_2.idc
 
 # Replace Bootanimation
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip
+    $(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
 
 # Utilities
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/utils/optimizedb:system/etc/utils/optimizedb
+    $(LOCAL_PATH)/prebuilt/xbin/remount:system/xbin/remount \
+    $(LOCAL_PATH)/prebuilt/utils/optimizedb:system/etc/utils/optimizedb \
+    $(LOCAL_PATH)/prebuilt/utils/optimizestorage:system/etc/utils/optimizestorage \
+    $(LOCAL_PATH)/prebuilt/init.d/11frandom:system/etc/init.d/11frandom
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -116,6 +103,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml)
 
+# Update timezones to 2015e
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/zoneinfo.dat:system/usr/share/zoneinfo/zoneinfo.dat \
+    $(LOCAL_PATH)/prebuilt/zoneinfo.idx:system/usr/share/zoneinfo/zoneinfo.idx \
+    $(LOCAL_PATH)/prebuilt/zoneinfo.version:system/usr/share/zoneinfo/zoneinfo.version
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.omap4
+
 # PowerHAL
 PRODUCT_PACKAGES += \
     power.front \
@@ -125,6 +122,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.a2dp.default \
+    audio.r_submix.default \
     libtinyalsa \
     tinycap \
     tinymix \
@@ -148,6 +146,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.disable_scissor_opt=true
 
+# gralloc symlink
+PRODUCT_PACKAGES += \
+    gralloc.omap4.so
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch
@@ -165,7 +167,7 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     mischelp \
     libinvensense_mpl \
-    hcidump
+    libstagefrighthw
 
 #Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -192,9 +194,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ADDITIONAL_DEFAULT_PROPERTIES := \
     ro.secure=0 \
     ro.allow.mock.location=1 \
-    persist.sys.usb.config=mtp,mass_storage \
+    persist.sys.usb.config=mtp \
     ro.adb.secure=0 \
     ro.debuggable=1
+
+# Memory management
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ksm.default=1
 
 # Here crashes gallery
 # if ro.build.display.id is such "cm_front-userdebug 4.2.2 JDQ39E eng.shev.20130805.153138 test-keys" then gellry crashshshsh

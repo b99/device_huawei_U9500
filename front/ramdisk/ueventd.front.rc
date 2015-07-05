@@ -63,3 +63,7 @@
 /modem/nvm2/*          0660  radio       radio
 
 /dev/bus/usb/*         0660  system      usb
+
+# frandom permissions
+/dev/frandom           0666  root        root
+/dev/erandom           0666  root        root

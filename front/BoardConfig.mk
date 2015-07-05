@@ -75,16 +75,17 @@ TARGET_BOARD_OMAP_CPU := 4460
 
 #HWcomposer
 BOARD_USES_HWCOMPOSER := true
+BOARD_USE_CUSTOM_HWC := true
 TARGET_HAS_WAITFORVSYNC := true
+BOARD_USE_SYSFS_VSYNC_NOTIFICATION := true
 
 # Setup custom omap4xxx defines
 BOARD_USE_CUSTOM_LIBION := true
 
 # Kernel/Ramdisk
-BOARD_KERNEL_CMDLINE := console=ttyGS2,115200n8 mem=1G vmalloc=768M vram=16M omapfb.vram=0:8M omap_wdt.timer_margin=30 mmcparts=mmcblk0:p15(splash) androidboot.hardware=front
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/huawei/front/kernel
+TARGET_PREBUILT_KERNEL := device/huawei/front/prebuilt/kernel
 TARGET_PROVIDES_INIT_TARGET_RC := true
 
 # EGL
@@ -109,10 +110,13 @@ WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_BAND                   := 802_11_ABG
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/front/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/huawei/front/bluetooth/vnd_front.txt
 
 # Set 32 byte cache line to true
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
@@ -129,12 +133,13 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun/file"
 
-# fix this up by examining /proc/mtd on a running device
+# fix this up by examining /proc/partitions on a running device. (value * 1024)
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 6731857920
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 939524096
+# 6329204736 - 16384 <encryption footer>
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 6329188352
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Security
@@ -147,10 +152,9 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/huawei/front/releasetools/fr
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 #TWRP
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_INITRC := device/huawei/front/recovery/init.twrp.rc
+TARGET_RECOVERY_INITRC := device/huawei/front/ramdisk/init.twrp.rc
 RECOVERY_SDCARD_ON_DATA := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
