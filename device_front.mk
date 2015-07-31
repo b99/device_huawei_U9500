@@ -64,9 +64,6 @@ PRODUCT_COPY_FILES += \
 
 # Utilities
 PRODUCT_COPY_FILES += \
-    $(COMMON_FOLDER)/prebuilt/xbin/remount:system/xbin/remount \
-    $(COMMON_FOLDER)/prebuilt/etc/utils/optimizedb:system/etc/utils/optimizedb \
-    $(COMMON_FOLDER)/prebuilt/etc/utils/optimizestorage:system/etc/utils/optimizestorage \
     $(COMMON_FOLDER)/prebuilt/etc/init.d/11frandom:system/etc/init.d/11frandom
 
 # Media / Audio
@@ -108,6 +105,12 @@ PRODUCT_PACKAGES += \
     e2fsck \
     l2ping \
     com.android.future.usb.accessory
+
+# Utilities
+PRODUCT_PACKAGES += \
+    remount \
+    optimizedb \
+    optimizestorage
 
 # f2fs utilities
 PRODUCT_PACKAGES += \
