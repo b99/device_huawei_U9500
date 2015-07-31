@@ -57,7 +57,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.primary.omap4 \
     gralloc.omap4.so \
-    power.front \
     camera.omap4 \
     lights.omap4 \
     libstagefrighthw
@@ -73,7 +72,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/ramdisk/ueventd.front.rc:root/ueventd.front.rc \
     $(COMMON_FOLDER)/ramdisk/fstab.front:root/fstab.front
 
-# Utilities
+# init.d
 PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/prebuilt/etc/init.d/11frandom:system/etc/init.d/11frandom
 
