@@ -148,9 +148,9 @@ on fs
     chown system system /sys/block/mmcblk0/queue/scheduler
     chmod 0664 /sys/block/mmcblk0/queue/scheduler
 
-    #change the permissions for flashless download app */
+    # Change the permissions for flashless download app */
     chmod 0660 /sys/devices/virtual/usbswitch/usbsw/swstate
-    chown system system /sys/devices/virtual/usbswitch/usbsw/swstate
+    chown radio radio /sys/devices/virtual/usbswitch/usbsw/swstate
 
     chmod 0664 /sys/devices/platform/xmm_boot/state
     chmod 0660 /sys/devices/platform/xmm_boot/io
