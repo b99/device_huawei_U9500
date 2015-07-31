@@ -17,6 +17,7 @@ modem.audio=1
 # 0 => WCDMA preferred.
 # 2 => WCDMA only
 ro.telephony.default_network=2
+#
 # hsdpa+
 ro.config.hspap_hsdpa_open=1
 ro.ril.hsxpa=2
@@ -46,7 +47,5 @@ ro.config.dualmic=true
 # Fast mass storage
 ro.vold.umsdirtyratio=50
 #
-# Default storage
-persist.sys.main_storage=sdcard0
 # FM
 ro.config.fm_type=libbcmfm_if
