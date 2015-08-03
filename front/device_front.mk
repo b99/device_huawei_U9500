@@ -17,6 +17,17 @@
 # limitations under the License.
 #
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+# Kernel and modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/prebuilt/pvrsrvkm_sgx540_120.ko:system/lib/modules/pvrsrvkm_sgx540_120.ko
+
 # vendor
 $(call inherit-product-if-exists, vendor/huawei/front/front-vendor.mk)
 $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
@@ -170,7 +181,7 @@ PRODUCT_PACKAGES += \
     optimizedb \
     optimizestorage
 
-#Dalvik
+# Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaputilization=0.75 \
     dalvik.vm.lockprof.threshold=500 \
