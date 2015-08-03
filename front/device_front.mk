@@ -71,11 +71,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
 
-# Utilities
+# init.d
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/xbin/remount:system/xbin/remount \
-    $(LOCAL_PATH)/prebuilt/utils/optimizedb:system/etc/utils/optimizedb \
-    $(LOCAL_PATH)/prebuilt/utils/optimizestorage:system/etc/utils/optimizestorage \
     $(LOCAL_PATH)/prebuilt/init.d/11frandom:system/etc/init.d/11frandom
 
 # These are the hardware-specific features
@@ -136,7 +133,7 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     static_busybox
 
-#Lib Skia test
+# Lib Skia test
 PRODUCT_PACKAGES += \
     SkLibTiJpeg_Test
 
@@ -166,6 +163,12 @@ PRODUCT_PACKAGES += \
     mischelp \
     libinvensense_mpl \
     libstagefrighthw
+
+# Utilities
+PRODUCT_PACKAGES += \
+    remount \
+    optimizedb \
+    optimizestorage
 
 #Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
