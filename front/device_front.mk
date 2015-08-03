@@ -113,9 +113,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.omap4
 
-# PowerHAL
 PRODUCT_PACKAGES += \
-    power.front \
     hwcomposer.front
 
 # Audio Packages
