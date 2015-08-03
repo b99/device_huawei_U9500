@@ -1,4 +1,3 @@
-
 # LCD DENSITY
 ro.sf.lcd_density=320
 
@@ -8,18 +7,23 @@ modem.audio=1
 rild.libpath=/system/lib/libxgold-ril.so
 rild.libargs=-d /dev/xmd-tty0
 mobiledata.interfaces=pdp0,wlan0,gprs,ppp0,rmnet0
-ro.ril.enable.dtm=1
-ro.ril.gprsclass=34
-ro.ril.hsdpa.category=14
-ro.ril.hsupa.category=6
-ro.ril.hsxpa=3
-ro.config.hw_addsettingsdbex=1
 ro.config.hw_flashless=true
-ro.config.fm_type=libbcmfm_if
-
+#
 # Default network type.
 # 0 => WCDMA preferred.
-ro.telephony.default_network=0
+# 2 => WCDMA only
+ro.telephony.default_network=2
+#
+# hsdpa+
+ro.config.hspap_hsdpa_open=1
+ro.ril.hsxpa=3
+ro.ril.gprsclass=34
+ro.ril.hsdpa.category=16
+ro.ril.hsupa.category=6
+ro.ril.enable.dtm=1
+
+ro.config.hw_addsettingsdbex=1
+ro.config.fm_type=libbcmfm_if
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse=1
