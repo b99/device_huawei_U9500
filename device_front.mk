@@ -192,6 +192,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1 \
     dalvik.vm.verify-bytecode=false
 
+# Force transparent status bar and lock screen
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.force_highendgfx=true
+
 # Memory management
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ksm.default=1
