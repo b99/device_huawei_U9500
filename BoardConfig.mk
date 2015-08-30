@@ -100,6 +100,7 @@ BOARD_BLUEDROID_VENDOR_CONF := $(COMMON_FOLDER)/bluetooth/vnd_front.txt
 # RIL
 TARGET_PROVIDES_LIBRIL := $(VENDOR_DIR)/lib/libxgold-ril.so
 BOARD_RIL_NO_CELLINFOLIST := true
+TARGET_NEEDS_BIONIC_MD5 := true
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun/file"
