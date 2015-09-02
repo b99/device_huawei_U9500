@@ -41,6 +41,11 @@ on init
     mkdir /modem/nvm1 0775 radio radio
     mkdir /modem/nvm2 0775 radio radio
 
+    # KSM
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
+
 on post-fs-data
     mkdir /data/gps
     chown root system /data/gps
