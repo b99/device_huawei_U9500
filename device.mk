@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    audio.primary.omap4 \
     gralloc.omap4.so \
     camera.omap4 \
     memtrack.omap4
