@@ -1,0 +1,14 @@
+
+project build/
+diff --git a/build/core/Makefile b/build/core/Makefile
+index 0c8cdd9..b73e6c8 100644
+--- a/build/core/Makefile
++++ b/build/core/Makefile
+@@ -227,7 +227,6 @@ endif
+ 			PRODUCT_MANUFACTURER="$(PRODUCT_MANUFACTURER)" \
+ 			PRIVATE_BUILD_DESC="$(PRIVATE_BUILD_DESC)" \
+ 			BUILD_ID="$(BUILD_ID)" \
+-			BUILD_DISPLAY_ID="$(BUILD_DISPLAY_ID)" \
+ 			BUILD_NUMBER="$(BUILD_NUMBER)" \
+ 			PLATFORM_VERSION="$(PLATFORM_VERSION)" \
+ 			PLATFORM_SECURITY_PATCH="$(PLATFORM_SECURITY_PATCH)" \

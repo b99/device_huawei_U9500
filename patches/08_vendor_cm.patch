@@ -1,10 +1,27 @@
 
 project vendor/cm/
 diff --git a/vendor/cm/config/common.mk b/vendor/cm/config/common.mk
-index 3ad692a..0356beb 100644
+index 0bd7619..e402eab 100644
 --- a/vendor/cm/config/common.mk
 +++ b/vendor/cm/config/common.mk
-@@ -244,11 +244,6 @@ ifndef CM_BUILDTYPE
+@@ -168,7 +168,6 @@ PRODUCT_PACKAGES += \
+     mke2fs \
+     tune2fs \
+     bash \
+-    nano \
+     htop \
+     powertop \
+     lsof \
+@@ -220,7 +219,7 @@ PRODUCT_PACKAGES += \
+ endif
+ 
+ PRODUCT_PROPERTY_OVERRIDES += \
+-    persist.sys.root_access=0
++    persist.sys.root_access=3
+ 
+ PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
+ 
+@@ -238,11 +237,6 @@ ifndef CM_BUILDTYPE
      endif
  endif
  
@@ -17,10 +34,10 @@ index 3ad692a..0356beb 100644
      ifneq ($(CM_BUILDTYPE), SNAPSHOT)
          ifdef CM_EXTRAVERSION
 diff --git a/vendor/cm/config/common_full.mk b/vendor/cm/config/common_full.mk
-index 5d12550..530b433 100644
+index 3ddb7db..5b9a032 100644
 --- a/vendor/cm/config/common_full.mk
 +++ b/vendor/cm/config/common_full.mk
-@@ -20,7 +20,6 @@ PRODUCT_PACKAGES += \
+@@ -19,7 +19,6 @@ PRODUCT_PACKAGES += \
  
  # Extra tools in CM
  PRODUCT_PACKAGES += \
