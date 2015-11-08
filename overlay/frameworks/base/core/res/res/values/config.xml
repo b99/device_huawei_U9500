@@ -370,8 +370,8 @@
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
     <!-- CyanogenMod Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
+    <!-- string name="config_perf_profile_prop">sys.perf.profile</string>
+    <string name="config_perf_profile_default_entry">1</string -->
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
@@ -380,9 +380,6 @@
 
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
-
-    <!-- Enable support for legacy GPS HALs -->
-    <bool name="config_legacyGpsHAL">true</bool>
 
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
          For this time after the screen turns on, the Power Manager
@@ -397,8 +394,5 @@
     on screen size and total memory for the largest lowmemorykiller bucket, and scaled
     proportionally to the smaller buckets. -1 keeps the default. -->
     <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">122880</integer>
-
-    <!-- Is the device LTE capable -->
-    <bool name="config_lte_capable">false</bool>
 
 </resources>
